@@ -16,13 +16,19 @@ handleSubmit = event => {
     this.props.handleGetGifs(this.state.search)
 }
 
+handleChange = event => {
+    this.setState({
+        search: event.target.value
+    })
+}
+
 
 render(){
 
     return(
         <form onSubmit={this.handleSubmit}>
             <label>Search
-            <input type="text" value={this.state.search} onChange={event => this.setState({search: event.target.value})} />
+            <input type="text" value={this.state.search} onChange={this.handleChange} />
             </label>
     
         
